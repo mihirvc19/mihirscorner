@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Now — Mihir"
+  description="What Mihir is currently working on, studying, and reading."
+>
+  <h1>Now</h1>
+  <p class="meta muted">
+    Updated November 2026 &middot;
+    <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">what is this?</a>
+  </p>
+
+  <section class="now-section">
+    <h2>Studying</h2>
+    <p>
+      Real analysis, theory of computation, numerical methods and machine learning this semester. Spending a
+      lot of time on proofs and theory.
+    </p>
+  </section>
+
+  <section class="now-section">
+    <h2>Building</h2>
+    <p>
+      This site, for starters. Also revisiting and fleshing out abandoned projects from the past.
+    </p>
+  </section>
+
+  <section class="now-section">
+    <h2>Reading</h2>
+    <p>
+      <em>Understanding Analysis</em> by Stephen Abbot. Skimming through but starting soon.
+      Also working through Sipser's <em>Introduction to the Theory of Computation</em>.
+    </p>
+  </section>
+</Base>
+
+<style>
+  h1 {
+    margin-bottom: 0.3rem;
+  }
+
+  .meta {
+    margin-bottom: 3rem;
+    font-size: 0.8rem;
+  }
+
+  .now-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .now-section h2 {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .now-section p {
+    max-width: 540px;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .now-section em {
+    font-style: italic;
+    color: var(--text);
+  }
+</style>

@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projects = [
+  {
+    name: "Derivate",
+    description:
+      "A C-based symbolic differentiator that parses mathematical expressions, builds an Abstract Syntax Tree (AST), and computes derivatives using standard calculus rules.",
+    tags: ["C", "Compiler Design", "AST", "Symbolic Computation", "Data Structures"],
+    github: "https://github.com/mihirvc19/derivate",
+    live: null,
+  },
+  {
+    name: "Torus Binary Puzzle",
+    description:
+      "Algorithmic solvers and mathematical exploration for the Torus Binary Puzzle, a toroidal variant of the NP-Complete Binary Puzzle.",
+    tags: ["Python", "Algorithm Design", "Combinatorics", "NP-Complete", "Constraint Satisfaction"],
+    github: "https://github.com/mihirvc19/torus_bp",
+    live: null,
+  },
+  {
+    name: "An Algebraic Adventure",
+    description:
+      "A 2D educational RPG built with Python and Pygame designed to help middle school students practice algebra concepts through gameplay.",
+    tags: ["Python", "Pygame", "Game Development", "OOP", "Educational Tech"],
+    github: "https://github.com/mihirvc19/An_Algebraic_Adventure",
+    live: null,
+  },
+  {
+    name: "Ctrl Posture",
+    description:
+      "An educational website raising awareness about spinal health, the negative impacts of slouching, and actionable posture improvements in the digital age.",
+    tags: ["HTML", "CSS", "Front-End Development", "Web Design"],
+    github: "https://github.com/mihirvc19/ctrl_posture",
+    live: null,
+  },
+];
+---
+
+<Base title="Projects — Mihir">
+  <h1>Projects</h1>
+  <p class="subtitle muted">Things I've built or am building.</p>
+
+  <div class="projects">
+    {projects.map(p => (
+      <article class="project">
+        <div class="project-header">
+          <h3>{p.name}</h3>
+          <div class="project-links">
+            {p.github && (
+              <a href={p.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            )}
+            {p.live && (
+              <a href={p.live} target="_blank" rel="noopener noreferrer">Live ↗</a>
+            )}
+          </div>
+        </div>
+        <p>{p.description}</p>
+        <ul class="tags">
+          {p.tags.map(tag => <li>{tag}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</Base>
+
+<style>
+  h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  .subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project:last-child {
+    border-bottom: none;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .project-links a {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .project-links a:hover {
+    color: var(--accent);
+    opacity: 1;
+  }
+
+  .project p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.15em 0.6em;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+</style>

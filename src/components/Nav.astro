@@ -1,0 +1,73 @@
+---
+const links = [
+  { href: '/blog',     label: 'blog'     },
+  { href: '/projects', label: 'projects' },
+  { href: '/now',      label: 'now'      },
+];
+
+const { pathname } = Astro.url;
+---
+
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="brand">mihir</a>
+    <ul class="nav-links">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={['nav-link', { active: pathname === href || pathname.startsWith(href + '/') }]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: 0.03em;
+    transition: color 0.15s;
+  }
+
+  .brand:hover {
+    color: var(--accent);
+    opacity: 1;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text);
+    opacity: 1;
+  }
+</style>

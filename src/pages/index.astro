@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Mihir — Math & CS">
+  <section class="hero">
+    <h1>Mihir</h1>
+    <p class="tagline">Math & Computer Science student.</p>
+  </section>
+
+  <section class="bio">
+    <p>
+      I study mathematics and computer science — interested in algorithms, the
+      mathematical foundations of computing, and building things. This site is where I write and document projects.
+    </p>
+    <p>
+      Currently: <a href="/now">here's what I'm up to →</a>
+    </p>
+  </section>
+
+  <section class="links">
+    <ul>
+      <li><a href="https://github.com/mihirvc19" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/mihir-vish" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="mailto:saimihirvijay@gmail.com">Email</a></li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .tagline {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .bio {
+    margin: 2.5rem 0;
+    max-width: 540px;
+  }
+
+  .bio p {
+    line-height: 1.8;
+  }
+
+  .bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .links a {
+    font-size: 0.875rem;
+    letter-spacing: 0.03em;
+  }
+</style>
